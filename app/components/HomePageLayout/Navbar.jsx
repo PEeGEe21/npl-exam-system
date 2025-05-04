@@ -18,11 +18,9 @@ import { ArrowDown, ArrowDown2, Global, LogoutCurve, User } from 'iconsax-react'
 import { shortenTitle } from '@/app/lib/utils';
 import { logout } from '@/app/utils/common';
 import toast from 'react-hot-toast';
-// import { MenuContext } from '@/app/utils/context';
 
-const Navbar = ({user, start, isDesktop =true}) => {
+const Navbar = ({user, start}) => {
   const [loading, setLoading] = useState(true)
-  // const { toggle, showMenu } = useContext(MenuContext) || {};
   const showMenu = null;
 
   const handleLogOut = () => {
@@ -35,28 +33,19 @@ const Navbar = ({user, start, isDesktop =true}) => {
 
 
   return (
-      <header className='absolute top-0 w-full z-50 '>
-        <div className='max-w-[1400px] mx-auto w-full p-4 '>
+      <header className='absolute top-0 w-[95%] z-50 '>
+        <div className='max-w-[1400px] w-full p-4 '>
 
           <div className='flex justify-between items-center text-[#373636] '>
             <div>
               <Link
                     href="/"
                     className="text-xl font-semibold font-heading">
-                      {/* <Image
-                        src="/images/sidebar-img/ankr.png"
-                        width={150}
-                        height={150}
-                        alt="logo"
-                        priority
-                        className="" 
-                      />*/}
                       EXAM SYSTEM
               </Link>
             </div>
             <div>
               <div className="text-sm font-medium ">
-                {isDesktop ? 
                   <div className="inline-flex justify-between items-center text-sm font-medium gap-6 rounded-[12px] bg-white px-4  h-12">
                       
                         <>
@@ -131,9 +120,7 @@ const Navbar = ({user, start, isDesktop =true}) => {
                         </> 
 
                   </div>
-                :
-                  <></>
-                }
+                
               </div>
             </div>
           </div>
@@ -144,3 +131,4 @@ const Navbar = ({user, start, isDesktop =true}) => {
 };
 
 export default Navbar;
+
